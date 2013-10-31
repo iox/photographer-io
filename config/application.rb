@@ -43,6 +43,7 @@ module Iso
     
     config.active_record.schema_format = :sql
     config.assets.precompile += %w( custom.modernizr.js )
+    config.assets.initialize_on_precompile = false
     config.i18n.fallbacks = [:en]
 
     if Puma.respond_to?(:cli_config)
