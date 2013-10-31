@@ -49,5 +49,14 @@ module Iso
     if Puma.respond_to?(:cli_config)
       ::Iso.set_db_connection_pool_size! Puma.cli_config.options.fetch(:max_threads)
     end
+
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', 
+            :headers => :any, 
+            :methods => [:get, :post, :delete, :put, :options]
+      end
+    end
   end
 end
