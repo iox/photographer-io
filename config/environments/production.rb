@@ -95,3 +95,5 @@ Iso::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 end
+
+ENV["DATABASE_URL"] = "postgres://yvzstaepnnuswb:tKJm4QkPnb391YRrkZUD0Z3ugW@ec2-50-19-246-223.compute-1.amazonaws.com:5432/depbbrcs0s8v8s"

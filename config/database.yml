@@ -9,9 +9,3 @@ test:
   encoding: unicode
   database: photographerio_test
   pool: 5
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: photographerio_production
-  pool: 50
