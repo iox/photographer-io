@@ -91,35 +91,35 @@ class PhotographsController < ApplicationController
   end
 
   def search
-    if search_params[:q].blank? && search_params[:keyword].blank?
+    #if search_params[:q].blank? && search_params[:keyword].blank?
       redirect_to(photographs_path) and return
-    end
+    #end
 
-    search = Photograph.search do
-      if search_params[:q].present?
-        fulltext search_params[:q]
-      end
+    # search = Photograph.search do
+    #   if search_params[:q].present?
+    #     fulltext search_params[:q]
+    #   end
 
-      if search_params[:keyword].present?
-        with :keywords, search_params[:keyword]
-      end
+    #   if search_params[:keyword].present?
+    #     with :keywords, search_params[:keyword]
+    #   end
 
-      with :public, true
-      with :ghost, false
+    #   with :public, true
+    #   with :ghost, false
 
-      unless user_signed_in? && current_user.show_nsfw_content
-        with :safe_for_work, true
-      end
+    #   unless user_signed_in? && current_user.show_nsfw_content
+    #     with :safe_for_work, true
+    #   end
 
-      order_by :created_at, :desc
-      paginate page: params[:page], per_page: Photograph.default_per_page
-    end
+    #   order_by :created_at, :desc
+    #   paginate page: params[:page], per_page: Photograph.default_per_page
+    # end
 
-    @photographs = search.results
+    # @photographs = search.results
 
-    respond_with @photographs do |f|
-      f.html { render :index }
-    end
+    # respond_with @photographs do |f|
+    #   f.html { render :index }
+    # end
   end
 
   def random
