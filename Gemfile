@@ -51,6 +51,7 @@ gem 'rack-cache'
 gem 'multi_fetch_fragments', github: 'robotmay/multi_fetch_fragments'
 
 # services
+gem 'unicorn'
 gem 'puma', '2.6.0'
 gem 'sidekiq', '2.15.0'
 gem 'airbrake'
@@ -131,3 +132,5 @@ group :development, :test do
   gem 'launchy'
   gem 'timecop'
 end
+
+gem 'rails_12factor', group: :production

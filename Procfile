@@ -1,2 +1,1 @@
-web: bundle exec puma -p 5000
-worker: bundle exec sidekiq
+web: bundle exec unicorn -p 5000 -c ./config/unicorn.rb
