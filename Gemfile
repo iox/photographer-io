@@ -45,6 +45,7 @@ gem 'sunspot_with_kaminari'
 gem 'redis-objects'
 
 # caching
+gem 'memcachier'
 gem 'dalli'
 gem 'kgio'
 gem 'rack-cache'
