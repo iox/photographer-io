@@ -19,7 +19,7 @@
 /.env
 /.env.production
 /certs
-/config/database.yml
+#/config/database.yml
 /config/deploy.rb
 /coverage
 /playbooks
